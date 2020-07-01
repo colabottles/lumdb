@@ -1,5 +1,7 @@
+/* eslint react/no-did-mount-set-state: 0 */
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Overdrive from 'react-overdrive';
 import { Poster } from './Movie';
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
@@ -12,12 +14,12 @@ class MovieDetail extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=cdc2f8b7a8fb3f39d2eb0e3f63a64063&language=en-US`);
+      const res = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US`);
       const movie = await res.json();
       this.setState({
         movie,
-      })
-    } catch(e) {
+      });
+    } catch (e) {
       console.log(e);
     }
   }
@@ -27,7 +29,9 @@ class MovieDetail extends Component {
     return (
       <MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`}>
         <MovieInfo>
-          <img src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
+          <Overdrive id={movie.id}>
+            <Poster src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
+          </Overdrive>
           <div>
             <h1>{movie.title}</h1>
             <h3>{movie.release_date}</h3>
@@ -54,7 +58,7 @@ const MovieInfo = styled.div`
   padding: 2rem 10%;
   display: flex;
   > div {
-    margin-left: 20px;  
+    margin-left: 20px;
   }
   img {
     position: relative;
