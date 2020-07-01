@@ -23,8 +23,8 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": ".eslintrc.js",
+  "description": "A sample movie database using React.",
+  "main": "App.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/colabottles/lumdb.git"
@@ -34,5 +34,17 @@
   "bugs": {
     "url": "https://github.com/colabottles/lumdb/issues"
   },
-  "homepage": "https://github.com/colabottles/lumdb#readme"
+  "homepage": "https://github.com/colabottles/lumdb#readme",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
