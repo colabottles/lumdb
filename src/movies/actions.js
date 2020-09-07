@@ -4,7 +4,7 @@ export const RESET_MOVIE = 'RESET_MOVIE';
 
 export function getMovies() {
   return async function (dispatch) {
-    const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1');
+    const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=cdc2f8b7a8fb3f39d2eb0e3f63a64063&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1');
     const movies = await res.json();
     return dispatch({
       type: 'GET_MOVIES',
@@ -15,7 +15,7 @@ export function getMovies() {
 
 export function getMovie(id) {
   return async function (dispatch) {
-    const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US`);
+    const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=cdc2f8b7a8fb3f39d2eb0e3f63a64063&language=en-US`);
     const movie = await res.json();
     return dispatch({
       type: 'GET_MOVIE',
