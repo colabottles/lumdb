@@ -1,6 +1,6 @@
-/* eslint-disable no-console */
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-use-before-define */
-/* eslint-disable indent */
+/* eslint-disable no-console */
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
@@ -14,11 +14,11 @@
 // opt-in, read https://bit.ly/CRA-PWA
 
 const isLocalhost = Boolean(
-  // window.location.hostname === 'localhost' ||
-  // [::1] is the IPv6 localhost address.
-  // window.location.hostname === '[::1]' ||
+  window.location.hostname === 'localhost'
+    // [::1] is the IPv6 localhost address.
+    || window.location.hostname === '[::1]'
     // 127.0.0.0/8 are considered localhost for IPv4.
-    window.location.hostname.match(
+    || window.location.hostname.match(
       /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/,
     ),
 );
@@ -45,8 +45,8 @@ export function register(config) {
         // service worker/PWA documentation.
         navigator.serviceWorker.ready.then(() => {
           console.log(
-            `${'This web app is being served cache-first by a service '
-              }worker. To learn more, visit https://bit.ly/CRA-PWA`,
+            'This web app is being served cache-first by a service '
+              + 'worker. To learn more, visit https://bit.ly/CRA-PWA',
           );
         });
       } else {
@@ -61,7 +61,6 @@ function registerValidSW(swUrl, config) {
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
-      // eslint-disable-next-line no-param-reassign
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         if (installingWorker == null) {
