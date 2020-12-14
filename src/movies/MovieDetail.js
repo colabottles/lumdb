@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint react/no-did-mount-set-state: 0 */
 import React, { Component } from 'react';
 import styled from 'styled-components';
@@ -40,12 +41,12 @@ class MovieDetail extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   movie: state.movies.movie,
   isLoaded: state.movies.movieLoaded,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
+const mapDispatchToProps = (dispatch) => bindActionCreators({
   getMovie,
   resetMovie,
 }, dispatch);

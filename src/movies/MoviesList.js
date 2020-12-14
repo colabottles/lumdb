@@ -1,3 +1,6 @@
+/* eslint-disable no-shadow */
+/* eslint-disable arrow-parens */
+/* eslint-disable react/prop-types */
 /* eslint react/no-did-mount-set-state: 0 */
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
