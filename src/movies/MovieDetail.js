@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-shadow */
 /* eslint-disable react/prop-types */
 /* eslint react/no-did-mount-set-state: 0 */
 import React, { Component } from 'react';

@@ -1,3 +1,6 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable no-shadow */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -7,20 +10,19 @@ import { toggleMessage } from './actions';
 
 const Toggle = ({ messageVisibility, toggleMessage }) => (
   <div>
-    {messageVisibility &&
-      <Message class="message">You will be seeing this if redux action is toggled</Message>
-    }
+    {messageVisibility
+      && <Message class="message">You will be seeing this if redux action is toggled</Message>}
     <button onClick={toggleMessage}>
       Toggle Me
     </button>
   </div>
 );
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   messageVisibility: state.toggle.messageVisibility,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
+const mapDispatchToProps = (dispatch) => bindActionCreators({
   toggleMessage,
 }, dispatch);
 
