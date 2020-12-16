@@ -1,28 +1,31 @@
 module.exports = {
   "parser": "babel-eslint",
   "env": {
-      "browser": true,
-      "es6": true
+    "browser": true,
+    "es6": true
   },
   "settings": {
-        "ecmascript": 6,
-        "jsx": true
+    "ecmascript": 6,
+    "jsx": true
   },
   "parserOptions": {
-      "ecmaVersion": 2017,
-      "ecmaFeatures": {
-          "experimentalObjectRestSpread": true,
-          "experimentalDecorators": true,
-          "jsx": true
-      },
-      "sourceType": "module"
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "experimentalDecorators": true,
+      "jsx": true
+    },
+    "sourceType": "module"
   },
   "plugins": [
-      "react",
+    "react",
   ],
   "extends": "airbnb",
   "rules": {
     "react/jsx-filename-extension": 0,
     "function-paren-newline": 0
-  }
+  },
+  "ignorePatterns": [
+    "**/config/*", "**/.eslintrc.js", "**/serviceWorker.js"
+  ]
 };

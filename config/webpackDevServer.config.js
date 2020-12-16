@@ -115,6 +115,9 @@ module.exports = function(proxy, allowedHost) {
         require(paths.proxySetup)(app);
       }
     },
+    exclude: [
+      /config\/.*$/,
+    ],
     after(app) {
       // Redirect to `PUBLIC_URL` or `homepage` from `package.json` if url not match
       app.use(redirectServedPath(paths.publicUrlOrPath));
