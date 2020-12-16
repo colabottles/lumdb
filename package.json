@@ -30,7 +30,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.10.4"
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "prettier": "^2.2.1"
   },
   "browserslist": {
     "production": [
