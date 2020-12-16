@@ -6,7 +6,8 @@ const CACHEDSTATICASSETS = [
   '/',
   '/index.html',
   '/favicon.ico',
-  '/blog/index.html',
+  '/logo192.png',
+  '/logo512.png',
   '/css/style.css'
 ];
 const OFFLINE_PAGE = '/offline.html';
